@@ -1,6 +1,4 @@
-;use64
-format binary;PE console ; PE GUI
-
+title word
 dat1 segment
 a db 'Hello world1',10,13  
 b db 'Hello world2',10,13,'$'
