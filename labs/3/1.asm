@@ -2,11 +2,11 @@ title calc
 ;z = 48/x/y + 12*(x-y)
 
 datS segment
-   
-datS ends
    x db 4 
    y db 2
    z dw ?
+datS ends
+   
 codS segment
 assume cs:codS, ds:datS
 
