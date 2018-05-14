@@ -34,7 +34,7 @@ Codl Segment
       mov ax, [si + 6]
       mov [di + 6], ax
       
-      mov di, [si + 7]
+      mov ax, [si + 7]
       mov [di + 7], ax
       
       mov ax, [si + 8]
