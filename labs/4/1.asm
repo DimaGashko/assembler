@@ -9,7 +9,7 @@ Dat Segment
        db 0,0,0,0,1,0,0,0,0,0,
        db 0,0,0,0,1,0,0,0,0,0,
        db 0,0,0,0,1,0,0,0,0,0,
-       
+ 
    len equ 10 ;размерность массива
    n equ 5 ;номер строки и столбца, которые нужно поменять
    
@@ -27,29 +27,18 @@ Codl Segment
       
       mov cx, len
       mov bx, 0
-      mov dx, 0
+      mov bp, 0
       
       L1:
-         push cx
-      
          mov al, [si + (n - 1) * len + bx]
+         mov dl, [si + (n - 1) + bp]
          
-         push bx
-         mov bx, dx
-         
-         mov cl, [si + (n - 1) + bx]
-         mov [si + (n - 1) + bx], al
-         
-         pop bx
-         
-         mov [si + (n - 1) * len + bx], cl
-         
-         pop cx
+         mov [si + (n - 1) * len + bx], dl
+         mov [si + (n - 1) + bp], al
          
          add bx, 1
-         add dx, len
-         
-         loop L1
+         add bp, len
+      loop L1
       
 Codl EndS
 
